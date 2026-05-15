@@ -24,22 +24,16 @@ Este repositorio contiene los notebooks desarrollados para el Trabajo Fin de Gra
 - `data_hourly_agg.csv` – agregación horaria, usada en modelos de predicción y entrenamiento.  
 - `dataset_learning_24h.csv` – dataset para entrenamiento de clasificador simple y extendido.
 
-### CSVs faltantes para reproducibilidad completa
+> Por limitaciones de espacio, los datos originales (`year_all.csv` y crudos del IVIA) no se incluyen. En su lugar, se proporcionan los CSVs ya interpolados y procesados, con los que es posible ejecutar **todos los notebooks a partir del preprocesamiento**.
 
-Para ejecutar todos los notebooks desde cero, serían necesarios los siguientes CSVs adicionales:  
+### CSVs generados dentro de los notebooks
 
-- `year_all.csv` – datos originales de sensores para análisis exploratorio.  
-- `data_clean_interpolated.csv` – resultados del preprocesamiento de humedad y variables climáticas.  
-- `meteo_ivia.csv` y `meteo_clean_interpolated.csv` – datos meteorológicos crudos y preprocesados.  
-- CSVs de resultados intermedios y métricas generadas por notebooks de entrenamiento (`median_models_parameters.csv`, `metrics_summary_table.csv`, `rf_cases_with_dice_errors.csv`, etc.)  
-- CSVs de inferencia final y recomendaciones (`recommendations_counterfactual_peak.csv`, `representative_case_lstm_future_24h.csv`, etc.)
-
-> ⚠️ Nota: Actualmente, algunos notebooks dependen de estos CSVs faltantes. Se incluyen solo los archivos finales disponibles en el repositorio.
+Algunos CSVs utilizados por notebooks posteriores se generan automáticamente durante la ejecución de los notebooks iniciales. Entre ellos se encuentran archivos de resultados intermedios, métricas y datasets derivados. Por lo tanto, **no es necesario subirlos al repositorio** para reproducir el flujo de análisis y entrenamiento.
 
 ## Uso
 
 1. Instalar dependencias: Python 3.9+, `pandas`, `numpy`, `scikit-learn`, `shap`, `dice-ml`, `matplotlib`, `seaborn`.  
-2. Ejecutar los notebooks en orden para reproducir el flujo completo desde preprocesamiento hasta generación de recomendaciones, teniendo en cuenta los CSVs faltantes si se quiere ejecutar desde cero.  
+2. Ejecutar los notebooks en orden. Con los CSVs incluidos, se puede reproducir todo el flujo de análisis, entrenamiento de modelos y generación de recomendaciones a partir del preprocesamiento.
 
 ## Licencia
 
